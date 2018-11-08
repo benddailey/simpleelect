@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('ballots')->group(function() {
+    Route::get('/', 'BallotController@index')->name('ballots.index');
+});

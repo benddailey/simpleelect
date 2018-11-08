@@ -14,7 +14,11 @@ class BallotController extends Controller
      */
     public function index()
     {
-        //
+        $ballots = Ballot::all();
+
+        return view('ballots.index', [
+            'ballots' => $ballots,
+        ]);
     }
 
     /**
