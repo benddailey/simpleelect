@@ -28,7 +28,11 @@ class BallotController extends Controller
      */
     public function create()
     {
-        //
+        $ballot = new Ballot();
+
+        return view('ballots.create',[
+            'ballot' => $ballot,
+        ]);
     }
 
     /**
@@ -39,7 +43,9 @@ class BallotController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ballot = Ballot::create($request->all());
+
+        return redirect()->route('ballots.index');
     }
 
     /**

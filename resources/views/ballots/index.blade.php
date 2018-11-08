@@ -16,6 +16,9 @@
                         @endforeach
                     </ul>
                 </div>
+                <div class="card-footer">
+                    <a role="button" class="btn btn-success" href="{{ route('ballots.create') }}">New Ballot</a>
+                </div>
             </div>
         </div>
     </div>
