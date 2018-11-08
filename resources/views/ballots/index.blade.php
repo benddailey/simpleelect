@@ -11,7 +11,9 @@
                     <ul class="list-group">
                         @foreach($ballots as $ballot)
                             <li class="list-group-item">
-                                {{ $ballot->name }}
+                                <a href="{{ route('ballots.edit', $ballot) }}">
+                                    {{ $ballot->name }}
+                                </a>
                             </li>
                         @endforeach
                     </ul>

@@ -67,7 +67,9 @@ class BallotController extends Controller
      */
     public function edit(Ballot $ballot)
     {
-        //
+        return view('ballots.edit',[
+            'ballot' => $ballot,
+        ]);
     }
 
     /**
@@ -79,7 +81,10 @@ class BallotController extends Controller
      */
     public function update(Request $request, Ballot $ballot)
     {
-        //
+        $ballot->fill($request->all());
+        $ballot->save();
+
+        return redirect()->route('ballots.index');
     }
 
     /**

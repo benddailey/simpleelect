@@ -23,4 +23,6 @@ Route::prefix('ballots')->group(function() {
     Route::get('/', 'BallotController@index')->name('ballots.index');
     Route::get('create', 'BallotController@create')->name('ballots.create');
     Route::post('store', 'BallotController@store')->name('ballots.store');
+    Route::get('{ballot}/edit', 'BallotController@edit')->name('ballots.edit');
+    Route::patch('{ballot}/update', 'BallotController@update')->name('ballots.update');
 });

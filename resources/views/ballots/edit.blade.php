@@ -5,15 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">New Ballot</div>
+                <div class="card-header">Edit Ballot - {{ $ballot->name }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('ballots.store') }}">
+                    <form method="POST" action="{{ route('ballots.update', $ballot) }}">
+                        @method('PATCH')
                         @include('ballots._form')
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create Ballot
+                                    Update Ballot
                                 </button>
                             </div>
                         </div>
