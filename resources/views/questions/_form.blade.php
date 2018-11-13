@@ -35,7 +35,7 @@
         <select id="ballot_id" class="form-control{{ $errors->has('ballot_id') ? ' is-invalid' : '' }}" name="ballot_id">
             <option value="">Select Ballot</option>
             @foreach ($ballots as $ballot)
-                <option value="{{ $ballot->id }}">{{ $ballot->name }}</option>
+                <option value="{{ $ballot->id }}" {{ ( $ballot->id == old('ballot_id', $question->ballot_id) ) ? ' selected' : '' }}>{{ $ballot->name }}</option>
             @endforeach
         </select>
 
