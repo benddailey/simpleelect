@@ -12,4 +12,8 @@ class Ballot extends Model
         'close_at',
         'close',
     ];
+
+    public function question(){
+        $this->hasMany(Question::class);
+    }
 }
